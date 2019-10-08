@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>GamePro</title>
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen"
+	rel="stylesheet">
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Log In</h1>
+	
+		<ul class="topnav">
+				<li><a href="/">Front Page</a></li>
+	  			<li><a href="/login">Log In</a></li>
+				<li><a href="/game">The Game</a></li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+				<li><a href="/comments">Comments</a></li>
+		</ul>
+		<div class = "loginform">
+				<form th:action="@{/login}" method="post">
+				<p><label><input type="text" class = "inputfield" placeholder = "Username" name = "username"/></label></p>
+				<p><label><input type="password" class = "inputfield" placeholder = "Password" name = "password"/></label></p>
+				<input type = "submit" value = "Log In" class ="button">
+		</form>
+		</div>
+</body>
+</html>

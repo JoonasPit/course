@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>GamePro</title>
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen"
+	rel="stylesheet">
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Sign Up</h1>
+	
+		<ul class="topnav">
+				<li><a href="/">Front Page</a></li>
+	  			<li><a href="/login">Log In</a></li>
+				<li><a href="/game">The Game</a></li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+				<li><a href="/comments">Comments</a></li>
+		</ul>
+		<div class = "loginform">
+		<form action="#" th:action="@{/signuser}"  th:object= ${signup} method="post">
+		<div>
+				<p><input type="text" th:field="*{username}" class = "inputfield" placeholder = "Username"/></p>
+				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class = "error">Username Error</p>
+		</div>	
+		<div>	
+				<p><input type="text" th:field="*{userEmail}" class = "inputfield" placeholder = "E-mail"/></p>
+				<p th:if="${#fields.hasErrors('userEmail')}" th:errors="*{userEmail}" class = "error">Email Error</p>
+		</div>
+		<div>
+				<p><input type="password" th:field="*{password}" class = "inputfield" placeholder = "Password" /></p>
+				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class = "error">Password Error</p>
+		</div>
+		<div>		
+				<p><input type="password" th:field="*{passwordCheck}" class="inputfield"placeholder = "Re-enter password"/></p>
+				<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}" class = "error">Password Match Error</p>	
+		</div>	
+			
+				<input type="submit" value="Submit" class = "button" />
+		
+</form>
+</body>
+</html>
