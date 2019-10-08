@@ -114,6 +114,11 @@ th{
 	color:red;
 	font-size: 13px;
 }
+.errortext{
+	color:red;
+	font-size: 18px;
+}
+
 p{
 	color:white;
 	font-size: 30px;
