@@ -54,6 +54,6 @@ public class UserController {
     	else {
     		return "sign";
     	}
-    	return "redirect:/sign";    	
+    	return "redirect:/login";    	
     }
 }

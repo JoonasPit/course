@@ -35,7 +35,7 @@ public class PageController {
 		return (List<Score>) scoreRepo.findAll();
 	}
 	
-	@GetMapping(value= "/login")
+	@RequestMapping(value= "/login")
 	public String userLogin(){
 		return "login";
 	}
