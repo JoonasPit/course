@@ -13,7 +13,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	http
 	.authorizeRequests()
-	.antMatchers("/resources/**").permitAll()
+	.antMatchers("/resources/**","/images").permitAll()
 	.and()
     .authorizeRequests().antMatchers("/","/css/**","/leaderboard", "/game").permitAll()
     .and()
