@@ -124,10 +124,17 @@ function collisionDetection() {
 		if (x > padX && x < padX + playerPadWidth) {
 			dy = -dy;
 		} else {
-			alert("GAME OVER");
+			var refresh = confirm("Your score was: " + playerScore + "\nSubmit score with ok\nCancel to play again");
+			
+			if(refresh == true){
+			document.getElementById("runscore").value = playerScore;	
+			document.scoreForm.submit();
+			}
+			else {
 			document.location.reload();
 			clearInterval(interval);
 			main();
+			}
 		}
 	}
 }

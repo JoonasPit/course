@@ -37,6 +37,10 @@
 	</div>
 	<script src="{./js/src/buttonscript.js}"th:src="@{/js/src/buttonscript.js}">
     </script>
+    <form th:action="@{/submitscore}" name ="scoreForm" method = "post" th:object = "${score}">
+    <input type = "hidden" name = "userN" id = "username"/>
+    <input type ="hidden" name ="runscore" id ="runscore" value=""/>
+    </form>
 
 </body>
 </html>
