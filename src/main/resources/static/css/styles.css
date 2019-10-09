@@ -144,3 +144,14 @@ p{
 	text-decoration: none !important;
 	position: sticky;
 }
+.commentform{
+	text-align:center;
+	border-radius: 25px;
+	boder-style: solid;
+}
+.textarea{
+	border-radius: 20px;
+	boder-style: solid;
+	text-align:center;
+	font-family: "Courier New", Courier, monospace;
+}

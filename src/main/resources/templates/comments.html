@@ -25,5 +25,23 @@
 		<li><a href="/comments">Comments</a></li>
 	</ul>
 	<p>Under Construction</p>
+	
+		<table class="table">
+		<tr>
+			<th scope="col">Username</th>
+			<th scope="col">Comment</th>
+		</tr>
+		<tr th:each="comments : ${comments}">
+			<td th:text="${comments.Username}"></td>
+			<td th:text="${comments.usercomment}"></td>
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Delete</a></td>
+		</tr>
+	</table>
+	
+	<form name ="commentform" class = "commentform" th:action="@{/postcomment}" method ="post">
+	<textarea rows="3" cols="20" class = "textarea" placeholder="Leave a comment" name ="usercomment"></textarea>
+	<input type = submit class = "button" value ="Submit comment"/>
+	</form>
+	
 </body>
 </html>

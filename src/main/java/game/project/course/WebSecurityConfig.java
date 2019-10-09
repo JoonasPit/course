@@ -26,6 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     .and()
     .authorizeRequests().antMatchers("/game","/leaderboard").authenticated()
     .and()
+    .authorizeRequests().antMatchers("delete/{id}").hasAnyRole("ADMIN")
+    .and()        
     .formLogin()
 		.loginPage("/login")
 		.defaultSuccessUrl("/game")
