@@ -147,11 +147,26 @@ p{
 .commentform{
 	text-align:center;
 	border-radius: 25px;
-	boder-style: solid;
 }
 .textarea{
 	border-radius: 20px;
-	boder-style: solid;
+	border-style: solid;
 	text-align:center;
+	font-family: "Courier New", Courier, monospace;
+}
+.checkDifficulty{
+	text-align: right;
+	margin-top: -30%;
+	margin-right: 10%;
+	
+}
+
+label{
+	display: block;
+	color: white;
+	font-family: "Courier New", Courier, monospace;
+}
+legend{
+	color: white;
 	font-family: "Courier New", Courier, monospace;
 }

@@ -1,13 +1,13 @@
 // Variables
-
+var scoreVariable = 1;
 var playerScore = 0;
 var c = document.getElementById("gameCanvas");
 var ctx = c.getContext("2d");
 // GameBall
 var x = c.width / 2;
 var y = c.height - 30;
-var dx = 2;
-var dy = -2;
+var dx = 1;
+var dy = -1;
 var radius = 10;
 // sPad
 var playerPadHeight = 10
@@ -28,6 +28,21 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var bricks = [];
 
+
+function checkScoreVariable(){
+	if(document.getElementById("mediumCheck").checked){
+		dx = 2;
+		dy = -2;
+		scoreVariable = 5;
+	}
+	else if (document.getElementById("hardCheck").checked){
+		dx = 3;
+		dy = -3;
+		scoreVariable = 10;
+	}
+	
+}
+
 function brickCollision() {
 	for (var c = 0; c < brickColumnWidth; c++) {
 		for (var r = 0; r < rowHeight; r++) {
@@ -36,8 +51,11 @@ function brickCollision() {
 				if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
 					dy = -dy;
 					b.status = 0;
-					playerScore =playerScore + 10;
+					playerScore = playerScore + scoreVariable;
 					document.getElementById('playerScore').innerHTML = playerScore;
+					if(playerScore == rowHeight*brickColumnWidth){
+						alert("You Win");
+					}
 				}
 			}
 		}
@@ -162,6 +180,7 @@ function theBricks(){
 
 function main() {
 	theBricks();
+	checkScoreVariable();
 	var interval = setInterval(draw, 10);
 	setInterval(draw,10);
 	document.addEventListener("keydown", keyDownHandler, false);

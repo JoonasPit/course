@@ -73,6 +73,9 @@ public class PageController {
 	@PostMapping(value = "/postcomment")
 	public String postComment(Authentication authentication, @RequestParam("usercomment") String comment) {
 		String username = authentication.getName();
+		if (username.equals(null)){
+			return "redirect:/error";
+		}
 		Comment thisComment = new Comment(comment,username);
 		commentRepository.save(thisComment);
 		return "redirect:/comments";

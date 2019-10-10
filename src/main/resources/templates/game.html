@@ -33,6 +33,18 @@
 		<form>
 			<input type="button" value="Start Game" onclick="main()" class="button" />
 		</form>
+		
+		<div class = checkDifficulty>
+		<form id = "difficultyform">
+		<legend>Choose Difficulty</legend>
+		<input type = "radio" id= "easyCheck" value ="Easy" name="difcheck" checked/>
+		<label>Easy</label>
+		<input type = "radio" id= "mediumCheck" value ="Hard" name ="difcheck"/>
+		<label>Medium</label>
+		<input type = "radio" id= "hardCheck" value ="Hard" name ="difcheck"/>
+		<label>Hard</label>
+		</form>
+		</div>
 
 	</div>
 	<script src="{./js/src/buttonscript.js}"th:src="@{/js/src/buttonscript.js}">

@@ -19,8 +19,8 @@
 <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>Comments</h1>
 
+	<h1>Something went wrong! </h1>
 	<ul class="topnav">
 		<li><a href="/">Front Page</a></li>
 		<li><a href="/login">Log In</a></li>
@@ -28,25 +28,6 @@
 		<li><a href="/leaderboard">Leaderboard</a></li>
 		<li><a href="/comments">Comments</a></li>
 	</ul>
-	<p>Under Construction</p>
-	
-		<table class="table">
-		<tr>
-			<th scope="col">Username</th>
-			<th scope="col">Comment</th>
-		</tr>
-		<tr th:each="comments : ${comments}" class = "table">
-			<td th:text="${comments.Username}"></td>
-			<td th:text="${comments.usercomment}"></td>
-			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Delete</a></td>
-		</tr>
-	</table>
-	
-	<form name ="commentform" class = "commentform" th:action="@{/postcomment}" method ="post">
-	<textarea rows="3" cols="20" class = "textarea" placeholder="Leave a comment" name ="usercomment"></textarea>
-	<br/><br/>
-	<input type = submit class = "button" value ="Submit comment"/>
-	</form>
-	
+	<a href="/"class = "abutton">Go Home</a>
 </body>
 </html>
