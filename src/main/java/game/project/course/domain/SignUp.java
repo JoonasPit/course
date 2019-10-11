@@ -23,7 +23,7 @@ public class SignUp {
 	    private String userRole = "USER";
 	    
 	    @NotEmpty
-	    @Email
+	    @Email(message = "Not a valid email")
 	    private String userEmail = "";
 	    
 		    public void setuserRole(String userRole) {

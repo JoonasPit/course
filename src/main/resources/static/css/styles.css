@@ -55,7 +55,7 @@ body{
 	border-style:solid;
 }
 .button:hover, .abutton:hover{
-  background-color: var(--header-red); 
+  background-color: var(--header-red);
   color: black;
   border-color: black;
   cursor: pointer;
