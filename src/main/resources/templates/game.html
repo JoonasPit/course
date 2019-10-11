@@ -37,14 +37,16 @@
 		<div class = checkDifficulty>
 		<form id = "difficultyform">
 		<legend>Choose Difficulty</legend>
-		<input type = "radio" id= "easyCheck" value ="Easy" name="difcheck" checked/>
-		<label>Easy</label>
-		<input type = "radio" id= "mediumCheck" value ="Hard" name ="difcheck"/>
-		<label>Medium</label>
-		<input type = "radio" id= "hardCheck" value ="Hard" name ="difcheck"/>
-		<label>Hard</label>
+		<input type = "radio" id= "easyCheck" value ="Easy" name="difcheck"class = "radiocheck" checked/><label for ="easyCheck">Easy</label>
+		
+		<input type = "radio" id= "mediumCheck" value ="Hard" name ="difcheck" class = "radiocheck"/><label>Medium</label>
+		
+		<input type = "radio" id= "hardCheck" value ="Hard" name ="difcheck" class = "radiocheck"/><label>Hard</label>
+		
 		</form>
 		</div>
+		
+		<input type="radio" name="demo" value="one" id="radio-one" class="form-radio">
 
 	</div>
 	<script src="{./js/src/buttonscript.js}"th:src="@{/js/src/buttonscript.js}">
