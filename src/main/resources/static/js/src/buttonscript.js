@@ -22,7 +22,7 @@ var pressRight = false
 var pressLeft = false
 // Bricks
 var rowHeight = 3; //3
-var brickColumnWidth = 5; //5
+var brickColumnWidth = 6; //6
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;

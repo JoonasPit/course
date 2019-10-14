@@ -1,8 +1,7 @@
 :root{
 	--my-red: red;
 	--header-red: #ffd8d8;
-	--my-background-color: black;
-	
+	--my-background-color: black;	
 	--glow-effect:
   .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
   .1vw 0vw   0vw #f25757, .2vw 0vw   0vw #f25757, .4vw 0vw   0vw #f25757,
@@ -18,9 +17,12 @@
 	padding: 10px 10px;
 }
 .centerTheCanvas{
-	margin-top: -10%;
+	
+	margin-top: 2%;
 	text-align: center;
+	position: static;
 }
+
 .gameCanvas{
 	box-shadow:var(--canvas-glow);	
 	border-color: var(--header-red);
@@ -42,7 +44,6 @@ body{
 	background-color: var(--my-background-color);	
 }
 .button {
-	box-shadow: var(--canvas-glow);
 	font-family: 'Bungee Inline', cursive;
 	padding: 10px 20px;
   	text-align: center;
@@ -59,11 +60,17 @@ body{
   color: black;
   border-color: black;
   cursor: pointer;
+  box-shadow: var(--glow-effect);
 }
 .score{
-	font-family: 'Bungee Inline', cursive;
-	color: var(--header-red);
-	font-size: 30px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	color: white;
+	position: relative;
+}
+.scoreBox{
+	margin-top: -23%;
+	margin-left: 4%;
 }
 .topnav {
 	overflow: hidden;	
@@ -71,6 +78,7 @@ body{
 	font-family: 'Bungee Inline', cursive;
 	text-align: center;
 	list-style:none;
+	margin-top: -5%;
 }
 .topnav li{
 	display:inline-block;
@@ -134,7 +142,6 @@ p{
 	position: Sticky;
 }
 .abutton{
-	box-shadow: var(--canvas-glow);
 	font-family: 'Bungee Inline', cursive;
 	padding: 10px 20px;
   	text-align: center;
@@ -161,7 +168,7 @@ p{
 .checkDifficulty{
 	text-align: right;
 	margin-top: -30%;
-	margin-right: 10%;
+	margin-right: 7%;
 	
 }
 
@@ -216,4 +223,36 @@ legend{
 	color: white;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 20px;
+}
+.startbutton{
+    font-family: "Courier New", Courier, monospace;
+    padding: 10px 20px;
+  	text-align: center;
+	border-style: solid;
+	border-radius: 25px;
+	background-color: white;
+	color: black;
+	appearance: button;
+	border-color: var(--header-red);
+	border-style:solid;
+	text-decoration: none !important;
+	position: sticky;
+	margin-top: 3%;
+}
+.startbutton:hover{
+	cursor: pointer;
+	box-shadow: var(--canvas-glow);
+}
+.userbuttondiv{
+	text-align: right;
+}
+.gameh1{
+	margin-top: -5%;
+}
+
+.topnavdiv{
+	margin-top: -5px;
+}
+.topnavdivleaderboard{
+	margin-top: 10% !important;
 }

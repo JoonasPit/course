@@ -18,7 +18,9 @@
 			<input type="submit" value="Sign Out" class="abutton"/>
 		</form>
 	</div>
-	<h1>Game</h1>
+	<div class = "topnavdiv">
+	<h1 class ="gameh1">Game</h1>
+
 			<ul class="topnav">
 				<li><a href="/">Front Page</a></li>
 	  			<li><a href="/login">Log In</a></li>
@@ -26,14 +28,12 @@
 				<li><a href="/leaderboard">Leaderboard</a></li>
 				<li><a href="/comments">Comments</a></li>
 		</ul>
-	<div class="score">Score</div>
-	<div id="playerScore" class="score">0</div>
+	</div>
+	
+
 	<div class=centerTheCanvas>
-		<canvas id="gameCanvas" width="470" height="400" class="gameCanvas"></canvas>
-		<form>
-			<input type="button" value="Start Game" onclick="main()" class="button" />
-		</form>
-		
+		<canvas id="gameCanvas" width="560" height="390" class="gameCanvas"></canvas>
+	
 		<div class = checkDifficulty>
 		<form id = "difficultyform">
 		<legend>Choose Difficulty</legend>
@@ -42,17 +42,25 @@
 		<input type = "radio" id= "mediumCheck" value ="Hard" name ="difcheck" class = "radiocheck"/><label>Medium</label>
 		
 		<input type = "radio" id= "hardCheck" value ="Hard" name ="difcheck" class = "radiocheck"/><label>Hard</label>
-		
+		<form>
+			<input type="button" value="Start Game" onclick="main()" class="startbutton" />
 		</form>
-		</div>
+		</form></br>
 
+		</div>
 	</div>
 	<script src="{./js/src/buttonscript.js}"th:src="@{/js/src/buttonscript.js}">
     </script>
+    <div class ="scoreBox">
+    	<div class="score">Score
+		<div id="playerScore" class="score">0</div>
+		</div>
+		</div>
     <form th:action="@{/submitscore}" name ="scoreForm" method = "post" th:object = "${score}">
     <input type = "hidden" name = "userN" id = "username"/>
     <input type ="hidden" name ="runscore" id ="runscore" value=""/>
     </form>
+    
 
 </body>
 </html>

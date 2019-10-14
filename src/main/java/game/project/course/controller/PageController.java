@@ -1,5 +1,5 @@
 package game.project.course.controller;
-import java.io.Console;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -7,7 +7,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +38,8 @@ public class PageController {
 	}
 	@RequestMapping(value="/leaderboard", method = RequestMethod.GET)
 	public String getLeaderboard(Model model) {
-		model.addAttribute("score", scoreRepo.findAll());
+		//List<Score> sortedscores = scoreRepo.findAll(Sort.by(Sort.Direction.ASC,"score"));
+		model.addAttribute("score",scoreRepo.findByOrderByScoreDesc());
 		return "leaderboard";
 	}	
 	//REST

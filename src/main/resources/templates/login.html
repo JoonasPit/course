@@ -15,15 +15,17 @@
 <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div class = "userbuttondiv">
 	<div>
 		<form th:action="@{/logout}" method="post">
-			<input type="submit" value="Sign Out" class="abutton"/>
+			<input type="submit" value="Sign Out" class="abutton" id = "logoutbutton"/>
 		</form>
 	</div>
 	<div class="buttondiv">
 		<a href="/sign" class="abutton">Sign Up</a>
 	</div>
-	<h1>Log In</h1>
+	</div>
+	<h1 class =  "gameh1">Log In</h1>
 
 	<ul class="topnav">
 		<li><a href="/">Front Page</a></li>
