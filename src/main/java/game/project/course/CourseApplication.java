@@ -25,6 +25,7 @@ public class CourseApplication {
 			// admin -> password: newsalasana | bcrypt 10-rounds
 			urep.save(new User("admin","$2a$10$Tte.IU8Uvq4S/Zkf76R9nOx1S.fCs91uDW8C2We2WC.3zA8cbzbqG","ADMIN","e2@mail.com"));
 			crep.save(new Comment("Kiva peli hermanni","Kayttaja10"));
+			urep.save(new User("user","$2a$10$Lm..L2u0aUHIsK5kt.2nduIwUeUSn7SKGLdAVMlKjO/6I0eELj2b2", "USER","e@mail.com"));
 		};
 		}
 

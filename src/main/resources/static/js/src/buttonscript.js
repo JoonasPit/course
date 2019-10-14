@@ -1,4 +1,6 @@
 // Variables
+
+// Maybe with if blockcount = 0 redraw blocks set difficulty + 1
 var scoreVariable = 1;
 var playerScore = 0;
 var c = document.getElementById("gameCanvas");
@@ -7,7 +9,7 @@ var ctx = c.getContext("2d");
 var x = c.width / 2;
 var y = c.height - 30;
 var dx = 1;
-var dy = -1;
+var dy = -1.5;
 var radius = 10;
 // sPad
 var playerPadHeight = 10
@@ -19,8 +21,8 @@ var padY = (c.height - 30);
 var pressRight = false
 var pressLeft = false
 // Bricks
-var rowHeight = 3;
-var brickColumnWidth = 5;
+var rowHeight = 3; //3
+var brickColumnWidth = 5; //5
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -31,13 +33,13 @@ var bricks = [];
 
 function checkScoreVariable(){
 	if(document.getElementById("mediumCheck").checked){
-		dx = 2;
-		dy = -2;
+		dx = dx + 1;
+		dy = dy - 1;
 		scoreVariable = 5;
 	}
 	else if (document.getElementById("hardCheck").checked){
-		dx = 3;
-		dy = -3;
+		dx = dx + 2;
+		dy = dy - 2;
 		scoreVariable = 10;
 	}
 	
@@ -54,7 +56,12 @@ function brickCollision() {
 					playerScore = playerScore + scoreVariable;
 					document.getElementById('playerScore').innerHTML = playerScore;
 					if(playerScore == rowHeight*brickColumnWidth){
-						alert("You Win");
+						theBricks();
+						drawBricks();
+						drawBall();
+						dx++;
+						dy++;
+						scoreVariable++;
 					}
 				}
 			}
