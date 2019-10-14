@@ -16,6 +16,9 @@
 	text-align: center;
 	padding: 10px 10px;
 }
+.commenth1{
+	margin-top: 3%;
+}
 .centerTheCanvas{
 	
 	margin-top: 2%;
@@ -43,24 +46,24 @@ h1{
 body{
 	background-color: var(--my-background-color);	
 }
-.button {
-	font-family: 'Bungee Inline', cursive;
-	padding: 10px 20px;
+.button, .abutton {
+	font-family: "Courier New", Courier, monospace;
   	text-align: center;
-	border-style: solid;
-	border-radius: 25px;
 	background-color: black;
-	color: var(--header-red);
-	appearance: button;
-	border-color: var(--header-red);
-	border-style:solid;
+	background: none;
+	color: white;
+	text-decoration: none !important;
+	border-style: none !important;
+	appearance: none;
+	font-size: 16px;
+	border-radius: 30px;
 }
+
 .button:hover, .abutton:hover{
-  background-color: var(--header-red);
-  color: black;
-  border-color: black;
+	background:none;
+  color: white;
   cursor: pointer;
-  box-shadow: var(--glow-effect);
+  text-shadow: var(--glow-effect);
 }
 .score{
 	font-family: "Courier New", Courier, monospace;
@@ -75,7 +78,9 @@ body{
 .topnav {
 	overflow: hidden;	
 	background-color: black;
-	font-family: 'Bungee Inline', cursive;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 40px;
+	font-weight: bold;
 	text-align: center;
 	list-style:none;
 	margin-top: -5%;
@@ -91,24 +96,30 @@ body{
   padding: 10px 40px;
   text-decoration: none;
   font-size: 17px;
-  border-radius:25px;
   display:block;
 }
 
 .topnav a:hover {
   text-shadow: var(--glow-effect);
-  border-radius: 25px;
-  border-color: var(--header-red);
+}
+.table{
+		border-style: none !important;
+		width: 0%;
+		margin: 0px auto;
 }
 td{
-	font-family: 'Bungee Inline', cursive;
-	 color: var(--header-red);
+		font-family: "Courier New", Courier, monospace;
+		color: var(--header-red);
+		border-style: none !important;
+		padding: 20px !important;
 }
 th{
-	font-family: 'Bungee Inline', cursive;
-	text-shadow: var(--canvas-glow);
-	font-size: 20px;
-	 color: var(--header-red);
+		font-family: "Courier New", Courier, monospace;
+		text-shadow: var(--canvas-glow);
+		font-size: 20px;
+	 	color: var(--header-red);
+	 	border-style: none !important;
+	 	text-decoration: underline;
 }
 .inputfield {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -137,24 +148,12 @@ p{
 	text-align:center;
 }
 .buttondiv{
-	margin-top: 30px;
+	margin-top: 0.25%;
 	text-align: right;
+	margin-right: 0.6%;
 	position: Sticky;
 }
-.abutton{
-	font-family: 'Bungee Inline', cursive;
-	padding: 10px 20px;
-  	text-align: center;
-	border-style: solid;
-	border-radius: 25px;
-	background-color: black;
-	color: var(--header-red);
-	appearance: button;
-	border-color: var(--header-red);
-	border-style:solid;
-	text-decoration: none !important;
-	position: sticky;
-}
+
 .commentform{
 	text-align:center;
 	border-radius: 25px;
@@ -229,7 +228,8 @@ legend{
     padding: 10px 20px;
   	text-align: center;
 	border-style: solid;
-	border-radius: 25px;
+	border-radius: 25px;	
+	font-weight: bold;
 	background-color: white;
 	color: black;
 	appearance: button;
@@ -255,4 +255,10 @@ legend{
 }
 .topnavdivleaderboard{
 	margin-top: 10% !important;
+}
+.welcomeTopnav{
+	margin: -1% auto;
+}
+.welcomeh1{
+	font-size: 100px !important;
 }
