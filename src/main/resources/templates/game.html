@@ -56,7 +56,7 @@
 		<div id="playerScore" class="score">0</div>
 		</div>
 		</div>
-    <form th:action="@{/submitscore}" name ="scoreForm" method = "post" th:object = "${score}">
+    <form th:action="@{/submitscore}" id ="scoreForm" name ="scoreForm" method = "post" th:object = "${score}">
     <input type = "hidden" name = "userN" id = "username"/>
     <input type ="hidden" name ="runscore" id ="runscore" value=""/>
     </form>

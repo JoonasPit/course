@@ -155,7 +155,7 @@ function collisionDetection() {
 			
 			if(refresh == true){
 			document.getElementById("runscore").value = playerScore;	
-			document.forms["scoreForm"].submit();
+			document.getElementById("scoreForm").submit();
 			}
 			else {
 			document.location.reload();
