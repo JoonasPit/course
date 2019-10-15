@@ -36,6 +36,7 @@ public class PageController {
 		model.addAttribute("score", new Score());
 		return "game";
 	}
+	@PreAuthorize("hasAuthority('ADMIN','USER')")
 	@RequestMapping(value="/leaderboard", method = RequestMethod.GET)
 	public String getLeaderboard(Model model) {
 		//List<Score> sortedscores = scoreRepo.findAll(Sort.by(Sort.Direction.ASC,"score"));

@@ -33,10 +33,13 @@
 		<tr>
 			<th scope="col">Username</th>
 			<th scope="col">Comment</th>
+			<th sec:authorize = "hasAuthority('ADMIN')"></th>
+			<th sec:authorize = "hasAuthority('ADMIN')"></th>
 		</tr>
 		<tr th:each="comments : ${comments}" class = "table">
 			<td th:text="${comments.Username}"></td>
 			<td th:text="${comments.usercomment}"></td>
+			<td sec:authorize = "hasAuthority('ADMIN')"><a th:href="@{/editcomment/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Alter</a></td>
 			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Delete</a></td>
 		</tr>
 	</table>

@@ -5,6 +5,8 @@ var scoreVariable = 1;
 var playerScore = 0;
 var c = document.getElementById("gameCanvas");
 var ctx = c.getContext("2d");
+
+var interval;
 // GameBall
 var x = c.width / 2;
 var y = c.height - 30;
@@ -188,7 +190,7 @@ function theBricks(){
 function main() {
 	theBricks();
 	checkScoreVariable();
-	var interval = setInterval(draw, 10);
+	interval = setInterval(draw, 10);
 	setInterval(draw,10);
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
