@@ -159,7 +159,6 @@ function collisionDetection() {
 			}
 			else {
 			document.location.reload();
-			clearInterval(interval);
 			main();
 			}
 		}
