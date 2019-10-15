@@ -190,8 +190,7 @@ function theBricks(){
 function main() {
 	theBricks();
 	checkScoreVariable();
-	interval = setInterval(draw, 10);
-	setInterval(draw,10);
+	setInterval(draw, 10);
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
 }
