@@ -151,11 +151,11 @@ function collisionDetection() {
 		if (x > padX && x < padX + playerPadWidth) {
 			dy = -dy;
 		} else {
-			var refresh = confirm("Your score was: " + playerScore + "\nSubmit score with ok\nCancel to play again");
+			var refresh = window.confirm("Your score was: " + playerScore + "\nSubmit score with ok\nCancel to play again");
 			
 			if(refresh == true){
 			document.getElementById("runscore").value = playerScore;	
-			document.scoreForm.submit();
+			document.forms["scoreForm"].submit();
 			}
 			else {
 			document.location.reload();
