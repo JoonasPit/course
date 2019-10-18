@@ -26,6 +26,10 @@ public class PageController {
 	
 	@Autowired
 	private CommentRepository commentRepository;
+	@RequestMapping(value="/test")
+	public String justTesting() {
+		return "test";
+	}
 	
 	@RequestMapping(value="/")
 	public String sayHe() {
@@ -39,7 +43,6 @@ public class PageController {
 	@PreAuthorize("hasAuthority('ADMIN','USER')")
 	@RequestMapping(value="/leaderboard", method = RequestMethod.GET)
 	public String getLeaderboard(Model model) {
-		//List<Score> sortedscores = scoreRepo.findAll(Sort.by(Sort.Direction.ASC,"score"));
 		model.addAttribute("score",scoreRepo.findByOrderByScoreDesc());
 		return "leaderboard";
 	}	
@@ -66,19 +69,29 @@ public class PageController {
 	}
 	@PostMapping(value = "/submitscore")
 	public String submitScore(Authentication authentication, @RequestParam("runscore") int score) {
-		String username = authentication.getName();
-		Score currentScore = new Score(username, score);
-		scoreRepo.save(currentScore);
-		return "redirect:/leaderboard";
+		try{
+			String username = authentication.getName();
+			if(username.equals(null) || username == "" || username == null || username.equals(""))
+			{throw new NullPointerException();
+				}
+			else {
+			Score currentScore = new Score(username, score);
+			scoreRepo.save(currentScore);
+			}
+			return "redirect:/leaderboard";
+			}
+		catch(Exception NullPointerException){return "redirect:./sign";}
 	}
 	@PostMapping(value = "/postcomment")
 	public String postComment(Authentication authentication, @RequestParam("usercomment") String comment) {
-		String username = authentication.getName();
-		if (username.equals(null)){
-			return "redirect:/error";
+			
+		try {
+			String username = authentication.getName();	
+			Comment thisComment = new Comment(comment,username);
+			commentRepository.save(thisComment);
+			return "redirect:/comments";
 		}
-		Comment thisComment = new Comment(comment,username);
-		commentRepository.save(thisComment);
-		return "redirect:/comments";
+		catch (Exception NullPointerException){return "redirect:/sign";}
+		
 	}
 }

@@ -46,12 +46,15 @@
 			</p>
 			<p>
 				<label><input type="password" class="inputfield"
-					placeholder="Password" name="password" /></label>
+					placeholder="Password" name="password" id ="passwordfield"/></label>
 			</p>
 
 
 			<input type="submit" value="Log In" class="button">
+			<input type = "button" class= "button" value = "Password Visibility" onclick = "passwordVisibility()">
 		</form>
+		<script src="{./js/src/visibility.js}"th:src="@{/js/src/visibility.js}">
+	    </script>
 	</div>
 </body>
 </html>
