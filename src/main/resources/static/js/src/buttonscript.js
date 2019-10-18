@@ -1,6 +1,5 @@
 // Variables
 
-// Maybe with if blockcount = 0 redraw blocks set difficulty + 1
 var scoreVariable = 1;
 var playerScore = 0;
 var c = document.getElementById("gameCanvas");
@@ -151,16 +150,18 @@ function collisionDetection() {
 		if (x > padX && x < padX + playerPadWidth) {
 			dy = -dy;
 		} else {
+			clearInterval(interval);
 			var refresh = window.confirm("Your score was: " + playerScore + "\nSubmit score with ok\nCancel to play again");
 			
-			if(refresh == true){
-			document.getElementById("runscore").value = playerScore;	
-			document.getElementById("scoreForm").submit();
-			}
-			else {
-			document.location.reload();
-			main();
-			}
+				if(refresh){
+				drawBall();
+				document.getElementById("runscore").value = playerScore;	
+				document.scoreForm.submit();
+				}
+				else {
+				document.location.reload();
+				drawBall();
+				}
 		}
 	}
 }
@@ -187,9 +188,10 @@ function theBricks(){
 }
 
 function main() {
+	clearInterval(interval);
 	theBricks();
 	checkScoreVariable();
-	setInterval(draw, 10);
+	interval = setInterval(draw, 10);
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
 }
