@@ -37,15 +37,15 @@
 				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class = "error">Password Error</p>
 		</div>
 		<div>		
-				<p><input type="password" th:field="*{passwordCheck}" class="inputfield"placeholder = "Re-enter password" id ="passwordfield"/></p>
+				<p><input type="password" th:field="*{passwordCheck}" class="inputfield" placeholder = "Re-enter password" id ="passwordcheckfield"/></p>
 				<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}" class = "error">Password Match Error</p>	
 		</div>	
 			
-				<input type="submit" value="Submit" class = "button" />
-				<input type = "button" class= "button" value = "toggle" onclick = "passwordVisibility()">
-				
+				<input type="submit" value="Submit" class = "button" />		
+
+		</form>
 		
-</form>
+<input type = "button" class= "button" value = "Password Visibility" onclick = "passwordVisibility()">
 <script src="{./js/src/visibility.js}"th:src="@{/js/src/visibility.js}">
     </script>
 </body>

@@ -1,3 +1,5 @@
+// If gamecount === 2 maybe, throw gameover.
+
 // Variables
 
 var scoreVariable = 1;
