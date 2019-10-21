@@ -113,6 +113,8 @@ public class PageController {
 	}
 	
 	@PostMapping(value ="/edicomment/{id}")
+	// Fix editing comment, make it not save new comment with newid
+	// currently updates by saving as fully new comment
 	public String postEdit(@PathVariable("id") Long id) {
 		return "/comments";
 	}
