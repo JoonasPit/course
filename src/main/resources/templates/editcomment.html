@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>GamePro</title>
+<link rel="icon" type="image/png" sizes="16x16"
+	href="./images/favicon-16x16.png">
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a href="/"class = "abutton">Go Home</a>
+	<h1>Edit</h1>
+	</br></br></br></br>
+	<ul class="topnav">
+		<li><a href="/">Front Page</a></li>
+		<li><a href="/login">Log In</a></li>
+		<li><a href="/game">The Game</a></li>
+		<li><a href="/leaderboard">Leaderboard</a></li>
+		<li><a href="/comments">Comments</a></li>
+	</ul>
+	
+	<form action="#" th:action="@{/postcomment}"  th:object= ${comment} method="post">
+		<input type = "hidden" th:field = "*{commentid}"/></br>			
+		<p>Edit Comment:</p>
+		<textarea rows="3" th:field = "*{usercomment}" cols="20" class = "textarea" name ="usercomment"></textarea>
+	<input type = "submit" class = "button" value ="Alter"/>
+	</form>
+</body>
+</html>

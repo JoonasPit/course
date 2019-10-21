@@ -18,11 +18,16 @@ import game.project.course.domain.Comment;
 import game.project.course.domain.CommentRepository;
 import game.project.course.domain.Score;
 import game.project.course.domain.ScoreRepository;
+import game.project.course.domain.UserRepository;
+import game.project.course.domain.User;
 @Controller
 public class PageController {
 	
 	@Autowired
 	private ScoreRepository scoreRepo;
+	
+	@Autowired
+	private UserRepository urepo;
 	
 	@Autowired
 	private CommentRepository commentRepository;
@@ -51,14 +56,20 @@ public class PageController {
 	public @ResponseBody List<Score> scoreRest(){
 		return (List<Score>) scoreRepo.findAll();
 	}
+	// REST
+	@RequestMapping(value ="/users", method = RequestMethod.GET)
+	public @ResponseBody List<User> userRest(){
+		return (List<User>) urepo.findAll();
+	}
 	
 	@RequestMapping(value= "/login")
 	public String userLogin(){
 		return "login";
 	}
 	@GetMapping(value= "/comments")
-	public String getCommentPage(Model model) {
+	public String getCommentPage(Model model,Authentication authentication) {
 		model.addAttribute("comments",commentRepository.findAll());
+		//String auth = authentication.get();
 		return "comments";
 	}
 	@PreAuthorize("hasAuthority('ADMIN')")
@@ -93,5 +104,16 @@ public class PageController {
 		}
 		catch (Exception NullPointerException){return "redirect:/sign";}
 		
+	}
+	
+	@GetMapping(value = "/editcomment/{id}")
+	public String editUserComment(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("comment", commentRepository.findById(id));
+		return "editcomment";
+	}
+	
+	@PostMapping(value ="/edicomment/{id}")
+	public String postEdit(@PathVariable("id") Long id) {
+		return "/comments";
 	}
 }
