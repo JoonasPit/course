@@ -10,3 +10,4 @@
 	- Make game end after second loop
 	- Make sure everything is secured in the way it needs to be
 	  on course site.
+	- hidden commentid field for proper comment update
