@@ -69,7 +69,6 @@ public class PageController {
 	@GetMapping(value= "/comments")
 	public String getCommentPage(Model model,Authentication authentication) {
 		model.addAttribute("comments",commentRepository.findAll());
-		//String auth = authentication.get();
 		return "comments";
 	}
 	@PreAuthorize("hasAuthority('ADMIN')")

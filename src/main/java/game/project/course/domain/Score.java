@@ -4,12 +4,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Score {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Long scoreid;
+	
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name ="id")
+	private User user;
 	
 	private String name;
 	private int score;
@@ -19,11 +28,11 @@ public class Score {
 		this.score = 0;
 		this.name = "";
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long scoreid) {
+		this.scoreid = scoreid;
 	}
 	public Long getId() {
-		return id;
+		return scoreid;
 	}
 	
 	public Score(String name, int score) {
