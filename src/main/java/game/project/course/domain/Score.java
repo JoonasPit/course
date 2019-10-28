@@ -20,6 +20,11 @@ public class Score {
 	@JoinColumn(name ="id")
 	private User user;
 	
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name ="id")
+	private Comment comment;
+	
 	private String name;
 	private int score;
 	

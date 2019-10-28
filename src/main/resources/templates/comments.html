@@ -43,7 +43,7 @@
 			<td th:text="${comments.Username}"></td>
 			<td th:text="${comments.usercomment}"></td>
 			<td sec:authorize = "hasAuthority('USER')"><a th:href="@{/editcomment/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Alter</a></td>
-			<td sec:access="isAuthenticated()"><a th:href="@{/delete/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Delete</a></td>
+			<td sec:access="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${comments.commentid})}" class="btn btn-outline-dark">Delete</a></td>
 		</tr>
 	</table>
 	
