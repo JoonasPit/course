@@ -247,11 +247,12 @@ legend{
 	text-align: right;
 }
 .gameh1{
-	margin-top: -5%;
+	position: relative;
+	margin-top: -1%;
 }
 
 .topnavdiv{
-	margin-top: -5px;
+	margin-top: 6%;
 }
 .topnavdivleaderboard{
 	margin-top: 10% !important;
@@ -269,4 +270,10 @@ legend{
   margin: 15px;
   padding: 10px;
   border: 1px solid #aaaaaa;
+}
+
+.altercomment{
+	position: relative;
+	text-align: center;
+	
 }

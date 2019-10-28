@@ -29,12 +29,14 @@
 		<li><a href="/leaderboard">Leaderboard</a></li>
 		<li><a href="/comments">Comments</a></li>
 	</ul>
-	
-	<form action="#" th:action="@{/postcomment}"  th:object= ${comment} method="post">
+	<div class="altercomment">
+	<form action="#" th:action="@{/alteredcomment}"  th:object= ${comment} method="post">
 		<input type = "hidden" th:field = "*{commentid}"/></br>			
 		<p>Edit Comment:</p>
+	
 		<textarea rows="3" th:field = "*{usercomment}" cols="20" class = "textarea" name ="usercomment"></textarea>
-	<input type = "submit" class = "button" value ="Alter"/>
+		<input type = "submit" class = "button" value ="Alter"/>
 	</form>
+	</div>
 </body>
 </html>
