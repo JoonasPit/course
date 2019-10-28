@@ -1,10 +1,8 @@
 package game.project.course.domain;
 
+import java.util.List;
+
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -12,11 +10,15 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
 	private String passwordhash;
 	private String userrole;
 	private String useremail;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	public List<Comment> comment;
 	
 	public User() {
 	}
