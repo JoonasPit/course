@@ -263,8 +263,7 @@ legend{
 .welcomeh1{
 	font-size: 100px !important;
 }
-<<<<<<< HEAD
-=======
+
 .dragbox{
 	float: left; 
   width: 100px; 
@@ -278,8 +277,19 @@ legend{
 	position: relative;
 	text-align: center;
 }
-
-h2{
+.selectlang{
+	position:relative;
+	margin-top: -1.25%;	
 	color: white;
+	text-align: left;
+	color: white;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20p
 }
->>>>>>> 07881f3fcb227d0a502c9afd95427b9ee9ccb206
+.selectbox{
+	color: black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20p;
+	border-radius: 25px;
+	padding: 5px 5px;
+}

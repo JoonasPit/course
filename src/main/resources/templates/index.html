@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
 <title>GamePro</title>
 <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
 <link href="/css/styles.css" rel="stylesheet" type="text/css">
@@ -13,10 +14,19 @@
 <link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <div class = "buttondiv">
+
 		<a href = "/sign" class = "abutton">Sign Up</a>
+		<div class = "selectlang">
+		<select id="locales" class = "selectbox">
+		    <option value="">Change The Language</option>
+		    <option value="en" th:text="#{lang.eng}"></option>
+		    <option value="fr" th:text="#{lang.fr}"></option>
+		    <option value="de" th:text="#{lang.de}"></option>
+		</select>
 		</div>
-		
+		</div>
 	
 	<div class ="welcomeTopnav">
 	<h1 th:text="#{greeting}" class = "welcomeh1"></h1>
@@ -28,16 +38,8 @@
 				<li><a href="/comments" th:text="#{comments}"></a></li>
 		</ul>
 		</div>
-		<h2 th:text="#{greeting}"></h2>
-		<span th:text="#{lang.change}"></span>:
-	<select id="locales">
-    <option value=""></option>
-    <option value="en" th:text="#{lang.eng}"></option>
-    <option value="fr" th:text="#{lang.fr}"></option>
-    <option value="de" th:text="#{lang.de}"></option>
-</select>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $("#locales").change(function () {
