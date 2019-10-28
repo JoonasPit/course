@@ -293,3 +293,13 @@ legend{
 	border-radius: 25px;
 	padding: 5px 5px;
 }
+select > option{
+	-webkit-appearance:none;
+	border-style: none;
+	background: white;
+	color: black;
+	border-color:black;
+}
+.selectbox:hover{
+	cursor:pointer;	
+}
