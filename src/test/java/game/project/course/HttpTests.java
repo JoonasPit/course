@@ -27,6 +27,17 @@ public class HttpTests {
                 String.class)).contains("Welcome");
     }
 	
+	@Test
+	public void testFrench() throws Exception {
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/?lang=fr",
+                String.class)).contains("Bonjour");
+    }
+	@Test
+	public void testGerman() throws Exception {
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/?lang=de",
+                String.class)).contains("Willkommen");
+    }
+	
 	@Test 
 	public void testLogin() throws Exception{
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/login",
