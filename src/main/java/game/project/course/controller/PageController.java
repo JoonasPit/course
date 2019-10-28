@@ -20,6 +20,7 @@ import game.project.course.domain.Score;
 import game.project.course.domain.ScoreRepository;
 import game.project.course.domain.UserRepository;
 import game.project.course.domain.User;
+import game.project.course.*;
 @Controller
 public class PageController {
 	
