@@ -20,6 +20,7 @@ import game.project.course.domain.Score;
 import game.project.course.domain.ScoreRepository;
 import game.project.course.domain.UserRepository;
 import game.project.course.domain.User;
+import game.project.course.*;
 @Controller
 public class PageController {
 	
@@ -71,7 +72,7 @@ public class PageController {
 		model.addAttribute("comments",commentRepository.findAll());
 		return "comments";
 	}
-	@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN', 'USER')")
 	@GetMapping(value="/delete/{id}")
 	public String commentDelete(@PathVariable("id") Long id, Model model) {
 		commentRepository.deleteById(id);
@@ -96,13 +97,24 @@ public class PageController {
 	public String postComment(Authentication authentication, @RequestParam("usercomment") String comment) {
 			
 		try {
-			String username = authentication.getName();	
-			Comment thisComment = new Comment(comment,username);
+			String username = authentication.getName();
+			Long commentid = null;
+			Comment thisComment = new Comment(commentid, comment,username);
 			commentRepository.save(thisComment);
 			return "redirect:/comments";
 		}
 		catch (Exception NullPointerException){return "redirect:/sign";}
 		
+	}
+	@PostMapping(value ="/alteredcomment")
+	public String alteredComment(Authentication authentication,@RequestParam("commentid") Long commentid ,@RequestParam("usercomment") String comment) {
+		try {
+			String username = authentication.getName();	
+			Comment thisComment = new Comment(commentid,comment,username);
+			commentRepository.save(thisComment);
+			return "redirect:/comments";
+		}
+		catch (Exception NullPointerException){return "redirect:/sign";}
 	}
 	
 	@GetMapping(value = "/editcomment/{id}")

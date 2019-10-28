@@ -39,7 +39,7 @@ public class RepositoryTests {
 	}
 	@Test
 	public void createComment() throws Exception{
-		Comment testcomment = new Comment("Blaa", "testuser");
+		Comment testcomment = new Comment(null,"Blaa", "testuser");
 		cmt.save(testcomment);
 		assertThat(testcomment.getCommentid()).isNotNull();
 	}

@@ -247,11 +247,12 @@ legend{
 	text-align: right;
 }
 .gameh1{
-	margin-top: -5%;
+	position: relative;
+	margin-top: -1%;
 }
 
 .topnavdiv{
-	margin-top: -5px;
+	margin-top: 6%;
 }
 .topnavdivleaderboard{
 	margin-top: 10% !important;
@@ -262,3 +263,23 @@ legend{
 .welcomeh1{
 	font-size: 100px !important;
 }
+<<<<<<< HEAD
+=======
+.dragbox{
+	float: left; 
+  width: 100px; 
+  height: 35px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+.altercomment{
+	position: relative;
+	text-align: center;
+}
+
+h2{
+	color: white;
+}
+>>>>>>> 07881f3fcb227d0a502c9afd95427b9ee9ccb206

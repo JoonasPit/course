@@ -3,11 +3,13 @@
 	  user comments.
 ## To Do
 	- Error message after trying to save game result while not logged in
-	- Edit comment page for users.
+	- Fix localization
+	- Localize welcome message for German, French, English and Finnish
 	- Database one to many links/one to one links. userid can be used to link
 	  comments, scores etc.
-	- Make alter not save with fully new id
 	- Make game end after second loop
 	- Make sure everything is secured in the way it needs to be
 	  on course site.
-	- hidden commentid field for proper comment update
+
+## DUE
+	- 11.11

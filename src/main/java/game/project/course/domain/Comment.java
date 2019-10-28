@@ -20,8 +20,9 @@ public class Comment {
 	public Comment() {
 	}
 	
-	public Comment(String usercomment, String username) {
+	public Comment(Long commentid ,String usercomment, String username) {
 		super();
+		this.commentid = commentid;
 		this.usercomment = usercomment;
 		this.username = username;
 	}
