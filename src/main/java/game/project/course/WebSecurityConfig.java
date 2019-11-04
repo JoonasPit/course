@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     .authorizeRequests().antMatchers("/comments").permitAll()
     //.authenticated()
     .and()
-    .authorizeRequests().antMatchers("delete/{id}").hasAuthority("ADMIN")
+    .authorizeRequests().antMatchers("delete/{id}","/api/**").hasAuthority("ADMIN")
     .and()  
     .formLogin()
 		.loginPage("/login")

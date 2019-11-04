@@ -51,13 +51,16 @@ public class PageController {
 	public String getLeaderboard(Model model) {
 		model.addAttribute("score",scoreRepo.findByOrderByScoreDesc());
 		return "leaderboard";
-	}	
+	}
+	
 	//REST
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value ="/scores", method = RequestMethod.GET)
 	public @ResponseBody List<Score> scoreRest(){
 		return (List<Score>) scoreRepo.findAll();
 	}
 	// REST
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value ="/users", method = RequestMethod.GET)
 	public @ResponseBody List<User> userRest(){
 		return (List<User>) urepo.findAll();
@@ -124,8 +127,6 @@ public class PageController {
 	}
 	
 	@PostMapping(value ="/edicomment/{id}")
-	// Fix editing comment, make it not save new comment with newid
-	// currently updates by saving as fully new comment
 	public String postEdit(@PathVariable("id") Long id) {
 		return "/comments";
 	}

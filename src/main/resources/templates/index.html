@@ -17,13 +17,14 @@
 
 <div class = "buttondiv">
 
-		<a href = "/sign" class = "abutton">Sign Up</a>
+		<a href = "/sign" class = "abutton" th:text="#{sign.up}"></a>
 		<div class = "selectlang">
 		<select id="locales" class = "selectbox">
 		    <option value="" disabled selected hidden>Change The Language</option>
 		    <option value="en" th:text="#{lang.eng}"></option>
 		    <option value="fr" th:text="#{lang.fr}"></option>
 		    <option value="de" th:text="#{lang.de}"></option>
+		    <option value="fi" th:text="#{lang.fi}"></option>
 		</select>
 		</div>
 		</div>
